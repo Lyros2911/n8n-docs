@@ -1,24 +1,31 @@
-# Lychee Link Checker - Optimiert für n8n-docs
+# Lychee Link Checker Configuration - Optimiert
 exclude = [
+    # Localhost
     "^http://localhost",
     "^http://127\\.0\\.0\\.1",
     "^file://",
+    
+    # Placeholder URLs
     "^https?://example\\.",
     "^https?://your-",
-    "your-n8n",
-    "your-api",
     "\\{\\{",
-    "^https?://github\\.com/.*/blob/",
-    "^https?://github\\.com/.*/tree/",
-    "^https?://github\\.com/.*/compare/",
-    "^https?://github\\.com/[^/]+$",
-    "^https?://www\\.npmjs\\.com",
-    "^https?://platform\\.openai\\.com",
+    
+    # GitHub (403 Bot-Blocker)
+    "github\\.com/.*/blob/",
+    "github\\.com/.*/tree/",
+    "github\\.com/.*/edit/",
+    "github\\.com/.*/compare/",
+    
+    # Social Media (Rate Limits)
     "^https?://.*linkedin\\.com",
     "^https?://.*twitter\\.com",
     "^https?://.*x\\.com",
     "^https?://.*reddit\\.com",
     "^https?://.*medium\\.com",
+    
+    # Bot-Blocker Sites
+    "^https?://.*openai\\.com",
+    "^https?://.*npmjs\\.com",
     "^https?://.*airtable\\.com",
     "^https?://.*shopify\\.com",
     "^https?://.*discord\\.com",
@@ -26,6 +33,13 @@ exclude = [
     "^https?://.*splunk\\.com",
     "^https?://.*crowd\\.dev",
     "^https?://.*asana\\.com",
+    "^https?://.*g2\\.com",
+    "^https?://.*capterra\\.com",
+    "^https?://.*sekoia\\.io",
+    "^https?://.*activecampaign\\.com",
+    "^https?://ai\\.google\\.dev",
+    
+    # Redirect/Auth Issues
     "^https?://.*mistral\\.ai",
     "^https?://.*milvus\\.io",
     "^https?://.*getflow\\.com",
@@ -41,7 +55,7 @@ accept = [200, 201, 204, 206, 429]
 timeout = 20
 max_concurrency = 5
 max_retries = 2
-user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0"
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"
 exclude_all_private = true
 include_mail = false
 cache = true
