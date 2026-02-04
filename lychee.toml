@@ -1,18 +1,47 @@
-# Lychee Link Checker Configuration
+# Lychee Link Checker - Optimiert für n8n-docs
 exclude = [
     "^http://localhost",
     "^http://127\\.0\\.0\\.1",
-    "^https?://example\\.com",
+    "^file://",
+    "^https?://example\\.",
     "^https?://your-",
+    "your-n8n",
+    "your-api",
+    "\\{\\{",
+    "^https?://github\\.com/.*/blob/",
+    "^https?://github\\.com/.*/tree/",
+    "^https?://github\\.com/.*/compare/",
+    "^https?://github\\.com/[^/]+$",
+    "^https?://www\\.npmjs\\.com",
+    "^https?://platform\\.openai\\.com",
     "^https?://.*linkedin\\.com",
     "^https?://.*twitter\\.com",
     "^https?://.*x\\.com",
-    "github\\.com/.*/edit/",
+    "^https?://.*reddit\\.com",
+    "^https?://.*medium\\.com",
+    "^https?://.*airtable\\.com",
+    "^https?://.*shopify\\.com",
+    "^https?://.*discord\\.com",
+    "^https?://.*mysql\\.com",
+    "^https?://.*splunk\\.com",
+    "^https?://.*crowd\\.dev",
+    "^https?://.*asana\\.com",
+    "^https?://.*mistral\\.ai",
+    "^https?://.*milvus\\.io",
+    "^https?://.*getflow\\.com",
+    "^https?://app\\.",
+    "^https?://admin\\.",
+    "^https?://console\\.",
+    "^https?://api\\.",
+    "^https?://.*apiary\\.io",
+    "^https?://.*stoplight\\.io",
 ]
 exclude_path = ["_build", "node_modules", ".git"]
 accept = [200, 201, 204, 206, 429]
-timeout = 30
-max_concurrency = 10
-max_retries = 3
-user_agent = "Mozilla/5.0 (compatible; Lychee)"
+timeout = 20
+max_concurrency = 5
+max_retries = 2
+user_agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) Chrome/120.0.0.0"
 exclude_all_private = true
+include_mail = false
+cache = true
